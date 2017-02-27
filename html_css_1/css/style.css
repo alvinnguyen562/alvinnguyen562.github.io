@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    font-family: 'Taviraj', serif;
+    margin:  0 auto;
+	background-image:  url("img/2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 1080px;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+#nav1{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    /*background: #2895CC;*/
+    background-color: rgba(40, 149, 204, 0.8);
+}
+#nav1 h1{
+    float: left;
+    font-size: 2.5em;
+    padding-left: 15px;
+}
+#nav1 h1 a{
+    color: white;
+}
+#nav1 ul{
+    float: right;
+}
+#nav1 ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+#nav1 ul li a{
+    color: #FFF;
+    padding: 25px;
+}
+#nav1 ul li:hover{
+    background: #1684BB;
+    transition: all ease-in-out 0.45s;
+    text-decoration: none;
+}
+
+#active{
+    background: #1684BB;
+}
