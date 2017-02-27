@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function register() {
+                var x = new Array();
+                x[0] = document.getElementById('name').value;
+                x[1] = document.getElementById('lname').value;
+                x[2] = document.getElementById('email').value;
+                x[3] = document.getElementById('password').value;
+                x[4] = document.getElementById('cpassword').value;
+
+                var h = new Array();
+                h[0] = "<span style='color:red'>Please enter your name!<span>";
+                h[1] = "<span style='color:red'>Please enter your last name!<span>";
+                h[2] = "<span style='color:red'>Please enter your email!<span>";
+                h[3] = "<span style='color:red'>Please enter your password!<span>";
+                h[4] = "<span style='color:red'>Please confirm your password!<span>";
+
+                var divs = new Array("mname", "mlname", "memail", "mpassword", "mcpassword");
+                for (i in x) {
+                    var error = h[i];
+                    var div = divs[i];
+
+                    if (x[i] == "") {
+                        document.getElementById(div).innerHTML = error;
+                    } else {
+                        document.getElementById(div).innerHTML = "OK!";
+                    }
+                }
+            }
+            
+            function check_password() {
+                var first = document.getElementById('password').value;
+                var second = document.getElementById('cpassword').value;
+
+                if (second == first) {
+                    document.getElementById('mcpassword').innerHTML = "OK!";
+                } else {
+                    document.getElementById('mcpassword').innerHTML = "<span style='color:red'>Your password don't match!</span>"
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <form>
+            <table border="1">
+                <tr><td>Name:</td><td><input type="text" name="name" id="name" onkeyup="register()"/></td><td><div id="mname"></div></td></tr>
+                <tr><td>Last Name:</td><td><input type="text" name="lname" id="lname" onkeyup="register()"/></td><td><div id="mlname"></div></td></tr>
+                <tr><td>Email:</td><td><input type="text" name="email" id="email" onkeyup="register()"/></td><td><div id="memail"></div></td></tr>
+                <tr><td>Password:</td><td><input type="password" name="password" id="password" onkeyup="register()"/></td><td><div id="mpassword"></div></td></tr>
+                <tr><td>Confirm Password:</td><td><input type="password" name="cpassword" id="cpassword" onkeyup="check_password()"/></td><td><div id="mcpassword"></div></td></tr>
+            </table>
+            <br />
+            <input type="button" name="submit" value="submit"/>
+        </form>
+    </body>
+</html>
